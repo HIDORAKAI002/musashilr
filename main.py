@@ -16,20 +16,19 @@ except KeyError as e:
     print(f"FATAL ERROR: The environment variable '{e.args[0]}' is not set.")
     exit()
 
-# This dictionary maps your Role IDs to unique powers of 2.
+# This dictionary maps your server's Role IDs to unique powers of 2.
 STAFF_ROLE_BITWISE_MAP = {
-    1400496639680057407: 1,  # Founder (bit 0)
-    1400496639680057406: 2,  # Manager (bit 1)
-    1400496639675990033: 4,  # Moderation Team (bit 2)
-    1400496639675990026: 8,  # Developer (bit 3)
-    1400496639675990028: 16, # Event Management (bit 4)
-    1401960472269291520: 32, # sky (bit 5)
+    1400496639680057407: 1,  # Founder
+    1400496639675990032: 2,  # Manager
+    1400496639675990033: 4,  # Moderation Team
+    1400496639675990026: 8,  # Developer
+    1400496639675990028: 16, # Event Management
+    1401960472269291520: 32, # sky
 }
 
 # --- Discord Bot Setup ---
 intents = discord.Intents.default()
 intents.members = True
-intents.message_content = True # <-- This line is now included
 bot = commands.Bot(command_prefix="!lr-", intents=intents)
 
 @bot.event
