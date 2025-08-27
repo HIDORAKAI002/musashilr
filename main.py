@@ -29,6 +29,7 @@ STAFF_ROLE_BITWISE_MAP = {
 # --- Discord Bot Setup ---
 intents = discord.Intents.default()
 intents.members = True
+intents.message_content = True # <-- This line is now included
 bot = commands.Bot(command_prefix="!lr-", intents=intents)
 
 @bot.event
